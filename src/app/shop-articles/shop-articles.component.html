@@ -1,3 +1,7 @@
 <section>
+    <div *ngIf="!articles">Loading articles...</div>
     <shop-article *ngFor="let article of articles" [article]="article"></shop-article>
+    <div *ngIf="error" class="error">
+      Error: {{error.message}}
+    </div>
 </section>

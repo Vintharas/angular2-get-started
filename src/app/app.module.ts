@@ -10,6 +10,7 @@ import { ShopArticlesComponent } from './shop-articles/shop-articles.component';
 import { GoldCoinsPipe } from './gold-coins.pipe';
 import { ArticlesService } from './articles.service';
 import { ShopArticleComponent } from './shop-article/shop-article.component';
+import { ArticlesApiProvider } from './app.config.provider';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ShopArticleComponent } from './shop-article/shop-article.component';
     HttpModule
   ],
   providers: [
-    ArticlesService
+    ArticlesService,
+    ArticlesApiProvider
   ],
   bootstrap: [AppComponent]
 })

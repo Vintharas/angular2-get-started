@@ -9,10 +9,15 @@ import { ArticlesService } from '../articles.service';
 })
 export class ShopArticlesComponent implements OnInit {
   articles: Article[];
+  error: any;
 
   constructor(private articlesService: ArticlesService) { }
 
   ngOnInit() {
-    this.articles = this.articlesService.getAll();
+    this.articlesService
+      .getAllAsync()
+      .subscribe(
+        /* onNext*/ articles => this.articles = articles,
+        /* onError */ error => this.error = error);
   }
 }
