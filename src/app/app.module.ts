@@ -8,6 +8,7 @@ import { ShopWelcomeComponent } from './shop-welcome/shop-welcome.component';
 import { ShopFooterComponent } from './shop-footer/shop-footer.component';
 import { ShopArticlesComponent } from './shop-articles/shop-articles.component';
 import { GoldCoinsPipe } from './gold-coins.pipe';
+import { ArticlesService } from './articles.service';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { GoldCoinsPipe } from './gold-coins.pipe';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [
+    ArticlesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
