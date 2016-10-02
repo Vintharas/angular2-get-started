@@ -1,0 +1,10 @@
+<section>
+  <div class="item" *ngFor="let article of articles"> 
+    <header><h4>{{article.name}}</h4></header>
+    <section class="item__description">
+      <img [src]="article.imageUrl">
+      <p>{{article.description}}</p>
+    </section>
+    <footer>Price: {{article.price | goldCoins}}</footer>
+  </div>
+</section>

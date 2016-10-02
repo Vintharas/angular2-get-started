@@ -9,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
             <p>Mordor Ltd</p>
         </section>
       </footer> 
-    `
+    `,
+  styleUrls: ['./shop-footer.component.scss']
 })
 export class ShopFooterComponent implements OnInit {
     constructor() { }

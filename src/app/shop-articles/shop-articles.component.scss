@@ -1,0 +1,44 @@
+.item {
+    float: left;
+    margin: 10px;
+    width: 200px;
+    height: 400px;
+
+    background-color: #efefef;
+    border: 1px solid black;
+
+    font-family: helvetica, sans-serif;
+
+    header {
+        height: 15%;
+        font-size: 1.2em;
+        text-align: center;
+
+        h4 {
+            margin: 0;
+            padding: 10px;
+        }
+    }
+
+    .item__description{
+        height: 70%;
+        padding: 10px;
+
+        img {
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+        }
+
+        p {
+            margin: 0;
+            padding: 20px;
+        }
+    }
+    
+    footer{
+        height: 15%;
+        text-align: center;
+    }
+}
