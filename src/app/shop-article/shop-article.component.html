@@ -1,0 +1,8 @@
+<section class="item" *ngIf="article"> 
+  <header><h4>{{article.name}}</h4></header>
+  <section class="item__description">
+    <img [src]="article.imageUrl">
+    <p>{{article.description}}</p>
+  </section>
+  <footer>Price: {{article.price | goldCoins}}</footer>
+</section>

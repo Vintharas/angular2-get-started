@@ -9,6 +9,7 @@ import { ShopFooterComponent } from './shop-footer/shop-footer.component';
 import { ShopArticlesComponent } from './shop-articles/shop-articles.component';
 import { GoldCoinsPipe } from './gold-coins.pipe';
 import { ArticlesService } from './articles.service';
+import { ShopArticleComponent } from './shop-article/shop-article.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ArticlesService } from './articles.service';
     ShopWelcomeComponent,
     ShopFooterComponent,
     ShopArticlesComponent,
-    GoldCoinsPipe
+    GoldCoinsPipe,
+    ShopArticleComponent
   ],
   imports: [
     BrowserModule,
