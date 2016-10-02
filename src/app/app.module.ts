@@ -4,10 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { ShopWelcomeComponent } from './shop-welcome/shop-welcome.component';
+import { ShopFooterComponent } from './shop-footer/shop-footer.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShopWelcomeComponent,
+    ShopFooterComponent
   ],
   imports: [
     BrowserModule,
