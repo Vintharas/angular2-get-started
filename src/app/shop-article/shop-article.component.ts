@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Article } from '../model/article';
 
 @Component({
@@ -9,9 +9,14 @@ import { Article } from '../model/article';
 })
 export class ShopArticleComponent implements OnInit {
   @Input() article: Article;
+  @Output() onArticleBought: EventEmitter<Article> = new EventEmitter<Article>();
 
   constructor() { }
-  
   ngOnInit() {
   }
+  
+  buyArticle(){
+    this.onArticleBought.emit(this.article);
+  }
+  
 }

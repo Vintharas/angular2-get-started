@@ -11,6 +11,7 @@ import { GoldCoinsPipe } from './gold-coins.pipe';
 import { ArticlesService } from './articles.service';
 import { ShopArticleComponent } from './shop-article/shop-article.component';
 import { ArticlesApiProvider } from './app.config.provider';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ArticlesApiProvider } from './app.config.provider';
     ShopFooterComponent,
     ShopArticlesComponent,
     GoldCoinsPipe,
-    ShopArticleComponent
+    ShopArticleComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,

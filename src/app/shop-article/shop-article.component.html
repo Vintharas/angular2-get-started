@@ -3,6 +3,9 @@
   <section class="item__description">
     <img [src]="article.imageUrl">
     <p>{{article.description}}</p>
+    <p> Price: {{article.price | goldCoins}} </p>
   </section>
-  <footer>Price: {{article.price | goldCoins}}</footer>
+  <footer>
+    <button (click)="buyArticle()">Buy!</button>
+  </footer>
 </section>

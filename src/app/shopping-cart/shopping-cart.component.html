@@ -1,0 +1,7 @@
+<section class="shopping-cart" *ngIf="cart.lines.length > 0">
+  <h4>Shopping cart</h4>
+  <ul>
+    <li *ngFor="let line of cart.lines">{{line.quantity}} {{line.article.name}} at {{line.article.price | goldCoins}}</li>
+  </ul>
+  <p><strong>Total:</strong> {{cart.total | goldCoins }} </p>
+</section>

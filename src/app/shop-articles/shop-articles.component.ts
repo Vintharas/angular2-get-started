@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Article } from '../model/article';
+import { ShoppingCart } from '../model/shopping-cart';
 import { ArticlesService } from '../articles.service';
 
 @Component({
@@ -9,6 +11,7 @@ import { ArticlesService } from '../articles.service';
 })
 export class ShopArticlesComponent implements OnInit {
   articles: Article[];
+  cart: ShoppingCart = new ShoppingCart();
   error: any;
 
   constructor(private articlesService: ArticlesService) { }
@@ -19,5 +22,10 @@ export class ShopArticlesComponent implements OnInit {
       .subscribe(
         /* onNext*/ articles => this.articles = articles,
         /* onError */ error => this.error = error);
+  }
+
+  addArticleToCart(article:Article){
+    console.log(`Added article to cart! ${article.name}`);
+    this.cart.addArticle(article);
   }
 }
