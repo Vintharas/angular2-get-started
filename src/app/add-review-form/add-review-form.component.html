@@ -1,19 +1,31 @@
 <section *ngIf="review">
   <form (submit)="saveReview()" #form="ngForm">
     <div class="form-group">
+      <!--
       <label for="author">Author: </label>
       <input type="text" name="author" [(ngModel)]="review.author" disabled>
+      -->
+
+      <md-input placeholder="Author name" maxlength="100" class="demo-full-width" name="author" [(ngModel)]="review.author" disabled>
+      </md-input>
     </div>
 
     <div class="form-group">
+      <md-input placeholder="Title" maxlength="100" class="demo-full-width" name="title" [(ngModel)]="review.title" required [class.invalid]="!title.valid && title.dirty" #title="ngModel">
+      </md-input>
+      <span class="error-message" *ngIf="!title.valid && title.dirty">Please be so kind to fill in the title of your review</span>
+
+      <!--
       <label for="title">Title: </label>
       <input type="text" name="title" [(ngModel)]="review.title" required [class.invalid]="!title.valid && title.dirty" #title="ngModel">
       <span class="error-message" *ngIf="!title.valid && title.dirty">Please be so kind to fill in the title of your review</span>
+      -->
     </div>
 
     <div class="form-group">
-      <label for="content">Content: </label>
-      <textarea name="content" id="" cols="30" rows="10" [(ngModel)]="review.content" required #content="ngModel" [class.invalid]="!content.valid && content.dirty"></textarea>
+      <md-input placeholder="Content" maxlength="100" class="demo-full-width" name="content" [(ngModel)]="review.content" 
+          required [class.invalid]="!content.valid && content.dirty" #content="ngModel">
+      </md-input>
       <span class="error-message" *ngIf="!content.valid && content.dirty">Please be so kind to fill in the content of your review</span>
     </div>
 
@@ -22,7 +34,7 @@
       <input type="number" name="rating" [(ngModel)]="review.rating" required max=5 min=0>
     </div>
 
-    <input type="submit" name="addReview" value="Add Review" [disabled]="!form.valid">
+    <button md-raised-button color="primary" type="submit" name="addReview" [disabled]="!form.valid">Add Review</button>
   </form>
   <!--preview-->
   <user-review [review]="review"></user-review>

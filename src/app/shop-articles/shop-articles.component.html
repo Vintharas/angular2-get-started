@@ -1,9 +1,19 @@
 <section>
-    <div *ngIf="!articles">Loading articles...</div>
-    <shopping-cart [cart]="cart"></shopping-cart>
-    <shop-article *ngFor="let article of articles" [article]="article" (onArticleBought)="addArticleToCart($event)"></shop-article>
-    <div *ngIf="error" class="error">
-      Error: {{error.message}}
-    </div>
-    <!--div>{{cart | json}}</div-->
+  <md-grid-list cols="5" rowHeight="400px">
+    <md-grid-tile *ngIf="!articles">Loading articles...</md-grid-tile>
+    <md-grid-tile *ngFor="let article of articles">
+      <img [src]="article.imageUrl" width="100%">
+      <md-grid-tile-footer>
+        <h3 md-line>{{article.name}}</h3>
+        <h3 md-line>{{article.price | goldCoins}}</h3>
+        <a [routerLink]="['/shop', article.id]" style="color:white"><md-icon>info</md-icon></a>
+      </md-grid-tile-footer>
+    </md-grid-tile>
+  </md-grid-list>
+
+  <shopping-cart [cart]="cart"></shopping-cart>
+  <div *ngIf="error" class="error">
+    Error: {{error.message}}
+  </div>
+  <!--div>{{cart | json}}</div-->
 </section>

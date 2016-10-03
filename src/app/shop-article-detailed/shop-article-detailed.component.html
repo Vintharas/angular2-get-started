@@ -1,19 +1,33 @@
 <section *ngIf="article">
-  <h1>{{article.name}}</h1>
-  <img [src]="article.imageUrl">
-  <p>{{article.description}}</p>
-  <p><strong>Price: </strong> {{article.price | goldCoins}}</p>
-  <section>
-    <h2>Specifications</h2>
-    <ul>
-      <li *ngFor="let spec of article.specs">{{spec.name}}: {{spec.value}}</li>
-    </ul>
-  </section>
-  <section>
+
+  <md-card>fuck</md-card>
+
+  <md-card>
+    <md-card-title>{{article.name}}</md-card-title>
+    <md-card-content>
+      <img [src]="article.imageUrl">
+      <p>{{article.description}}</p>
+      <p><strong>Price: </strong> {{article.price | goldCoins}}</p>
+    </md-card-content>
+  </md-card>
+
+  <md-card>
+    <md-card-title>Specifications</md-card-title>
+    <md-card-content>
+      <ul>
+        <li *ngFor="let spec of article.specs">{{spec.name}}: {{spec.value}}</li>
+      </ul>
+    </md-card-content>
+  </md-card>
+
+  <md-card>
     <h2>Review</h2>
-    <button (click)="addReview()">Add Review</button>
+    <button *ngIf="!newReview" (click)="addReview()" md-raised-button>Add Review</button>
     <add-review-form [review]="newReview" (onSaveReview)="addReviewToArticle($event)"></add-review-form>
     <user-review *ngFor="let review of article.reviews" [review]="review"></user-review>
-  </section>
-  <button (click)="goBack()">Back</button>
+  </md-card>
+
+  <md-card>
+    <button md-raised-button (click)="goBack()">Back</button>
+  </md-card>
 </section>

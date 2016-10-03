@@ -1,5 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+/* resets and basic styles */
+
+body {
+  margin: 0;
+  font-family: Roboto, sans-serif;
+}
+
+md-toolbar-row {
+  justify-content: space-between;
+}
+
+p {
+  margin: 16px;
+}
+
+md-grid-list {
+  margin: 16px;
+}
+
+.icon-20 {
+  font-size: 20px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* app styles */
+
+.app-content{
+  padding: 20px;
+  background-color: #fafafa;
+
+  md-card {
+    margin: 20px;
+  }
+}
+
 .error {
     border: 1px solid red;
     background-color: lightcoral;
