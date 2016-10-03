@@ -16,3 +16,13 @@
         width: 75px;
     }
 }
+
+.invalid{
+    border: 1px solid red;
+    background-color: lightpink;
+}
+
+.error-message {
+    color: red;
+    margin: 10px;
+}
