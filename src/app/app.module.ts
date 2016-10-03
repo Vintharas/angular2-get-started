@@ -14,6 +14,7 @@ import { ArticlesApiProvider } from './app.config.provider';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { routing } from './app.routes';
 import { ShopArticleDetailedComponent } from './shop-article-detailed/shop-article-detailed.component';
+import { UserReviewComponent } from './user-review/user-review.component';
 
 @NgModule({ 
   declarations: [
@@ -24,7 +25,8 @@ import { ShopArticleDetailedComponent } from './shop-article-detailed/shop-artic
     GoldCoinsPipe,
     ShopArticleComponent,
     ShoppingCartComponent,
-    ShopArticleDetailedComponent
+    ShopArticleDetailedComponent,
+    UserReviewComponent
   ],
   imports: [
     BrowserModule,

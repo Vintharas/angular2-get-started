@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Article } from '../model/article';
 import { ArticlesService } from '../articles.service';
@@ -12,17 +12,20 @@ import { ArticlesService } from '../articles.service';
 export class ShopArticleDetailedComponent implements OnInit {
   article: Article;
 
-  constructor(private route: ActivatedRoute, private articlesService:ArticlesService) { 
-    route.params
+  constructor(private route: ActivatedRoute, private articlesService:ArticlesService, private router:Router) {}
+
+  ngOnInit() {
+    this.route.params
       .subscribe(params => {
         let id = Number.parseInt(params['id']);
-        articlesService
+        this.articlesService
           .getAsync(id)
           .subscribe(article => this.article = article);
       })
   }
 
-  ngOnInit() {
+  goBack(){
+    this.router.navigate(["/"]);
+    //history.back();
   }
-
 }

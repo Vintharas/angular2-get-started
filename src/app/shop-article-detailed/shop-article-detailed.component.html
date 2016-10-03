@@ -1,4 +1,17 @@
 <section *ngIf="article">
   <h1>{{article.name}}</h1>
-  <p>etc...</p>
+  <img [src]="article.imageUrl">
+  <p>{{article.description}}</p>
+  <p><strong>Price: </strong> {{article.price | goldCoins}}</p>
+  <section>
+    <h2>Specifications</h2>
+    <ul>
+      <li *ngFor="let spec of article.specs">{{spec.name}}: {{spec.value}}</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Review</h2>
+    <user-review *ngFor="let review of article.reviews" [review]="review"></user-review>
+  </section>
+  <button (click)="goBack()">Back</button>
 </section>
