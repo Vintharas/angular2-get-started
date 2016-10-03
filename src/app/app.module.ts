@@ -15,6 +15,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { routing } from './app.routes';
 import { ShopArticleDetailedComponent } from './shop-article-detailed/shop-article-detailed.component';
 import { UserReviewComponent } from './user-review/user-review.component';
+import { AddReviewFormComponent } from './add-review-form/add-review-form.component';
 
 @NgModule({ 
   declarations: [
@@ -26,7 +27,8 @@ import { UserReviewComponent } from './user-review/user-review.component';
     ShopArticleComponent,
     ShoppingCartComponent,
     ShopArticleDetailedComponent,
-    UserReviewComponent
+    UserReviewComponent,
+    AddReviewFormComponent
   ],
   imports: [
     BrowserModule,

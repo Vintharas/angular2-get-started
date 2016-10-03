@@ -5,3 +5,14 @@
     background-color: lightcoral;
     padding: 10px;
 }
+
+
+.form-group{
+    display: block;
+    padding: 12px;
+
+    label {
+        display: inline-block;
+        width: 75px;
+    }
+}

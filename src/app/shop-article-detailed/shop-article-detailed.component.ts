@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Article } from '../model/article';
 import { ArticlesService } from '../articles.service';
+import { Article } from '../model/article';
+import { Review } from '../model/review';
 
 @Component({
   selector: 'app-shop-article-detailed',
@@ -11,6 +12,7 @@ import { ArticlesService } from '../articles.service';
 })
 export class ShopArticleDetailedComponent implements OnInit {
   article: Article;
+  newReview: Review;
 
   constructor(private route: ActivatedRoute, private articlesService:ArticlesService, private router:Router) {}
 
@@ -28,4 +30,15 @@ export class ShopArticleDetailedComponent implements OnInit {
     this.router.navigate(["/"]);
     //history.back();
   }
+
+  addReview(){
+    this.newReview = new Review("Jaime");
+  }
+
+  addReviewToArticle(){
+    this.article.reviews.push(this.newReview);
+    this.newReview = null;
+    // save via http
+  }
 }
+
