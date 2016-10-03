@@ -12,9 +12,10 @@ import { ArticlesService } from './articles.service';
 import { ShopArticleComponent } from './shop-article/shop-article.component';
 import { ArticlesApiProvider } from './app.config.provider';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { routing } from './app.routes';
+import { ShopArticleDetailedComponent } from './shop-article-detailed/shop-article-detailed.component';
 
-
-@NgModule({
+@NgModule({ 
   declarations: [
     AppComponent,
     ShopWelcomeComponent,
@@ -22,12 +23,14 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     ShopArticlesComponent,
     GoldCoinsPipe,
     ShopArticleComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    ShopArticleDetailedComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    routing
   ],
   providers: [
     ArticlesService,

@@ -22,4 +22,12 @@ export class ArticlesService {
       });
   }
 
+  getAsync(id:number): Observable<Article> {
+    return this.http
+      .get(this.ARTICLES_API_URL + `/${id}`)
+      .map( (r:Response) => {
+        return r.json();
+      });
+  }
+
 }
